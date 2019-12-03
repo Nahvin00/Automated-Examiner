@@ -66,8 +66,19 @@ int main() //main function
 		    cin >> Q5[i];
 			test(Q1[i], Q2[i], Q3[i], Q4[i], Q5[i]);
 		}
-		//to output in the file
-		outputFile << ins << "    " << cour << "  " << Q1[i] << " " << Q2[i] << " " << Q3[i] << " " << Q4[i] << " " << Q5[i] << endl;
+		//to change the lowercase to uppercase
+		if(islower(Q1[i])){
+            Q1[i]=Q1[i]-32 ;}
+        if(islower(Q2[i])){
+            Q2[i]=Q2[i]-32 ;}
+        if(islower(Q3[i])){
+            Q3[i]=Q3[i]-32 ;}
+        if(islower(Q4[i])){
+            Q4[i]=Q4[i]-32 ;}
+        if(islower(Q5[i])){
+            Q5[i]=Q5[i]-32 ;}
+        //to output in the file
+		outputFile << ins << "    " << cour << "  "<<(Q1[i]) << " " << (Q2[i]) << " " << (Q3[i]) << " " << (Q4[i]) << " " << (Q5[i]) << endl;
 	}
 	
 	ifstream inputFile("DataOutput.txt");//obtain the data from the created file
@@ -127,31 +138,16 @@ double total(char x) {
 	case 'E':
 		z = 4;
 		break;
-	case 'e':
-		z = 4;
-		break;
 	case 'G':
-		z = 3;
-		break;
-	case 'g':
 		z = 3;
 		break;
 	case 'A':
 		z = 2;
 		break;
-	case 'a':
-		z = 2;
-		break;
 	case 'P':
 		z = 1;
 		break;
-	case 'p':
-		z = 1;
-		break;
 	case 'U':
-		z = 0;
-		break;
-	case 'u':
 		z = 0;
 		break;
 	}
@@ -184,6 +180,6 @@ void display(int a, int b, int c, double d, double e, double f, double g, double
 		<< "QUESTION 4\t" << g << endl
 		<< "QUESTION 5\t" << h << endl
 		<< "INSTRUCTOR AVERAGE: " << i;
-	cout<<"Summary is stored in File.\nEnd of Program."; 
+	cout<<"\n\nSummary is stored in File.\nEnd of Program."; 
 
 }
